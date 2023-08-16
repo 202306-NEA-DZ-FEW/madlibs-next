@@ -1,3 +1,58 @@
-/**
- * Your CSS goes here.
- */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(240, 248, 255, 0.4), rgba(240, 248, 255, 0.4)), 
+    url('https://i.pinimg.com/736x/c8/ef/6a/c8ef6a5af327c826cf95da3586bec265.jpg');
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(224, 247, 250, 0.8);
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text {
+    font-size: 36px;
+    font-family: 'Kurale', serif;
+    color: #6ec573;
+    margin-bottom: 20px;
+  }
+
+  #second {
+    font-size: 48px;
+    color: #de8ab4;
+    font-family: 'Satisfy', cursive;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #8ae48d;
+    font-family: 'Kurale', serif;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(240, 240, 240, 0.8);
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    font-family: 'Kurale', serif;
+    color:rgba(165, 42, 42, 0.5);
+  }
