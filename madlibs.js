@@ -46,7 +46,7 @@ const parsedStory = array1.map(FinalOutput);
 return parsedStory;
 //console.log(parsedStory);
 }
-
+let ObjectParssed =parseStory;
 
 /**
  * All your other JavaScript code goes here, inside the function. Don't worry about
@@ -56,4 +56,22 @@ return parsedStory;
  */
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
+  
+
+
+  
+
+
+
 });
+
+// // const input = document.querySelector('madLibsEdit');
+// //   console.log(input);
+// //   ObjectParssed.map(function(em){
+// //  if  ((em.pos)&& em.pos === 'noun'){
+// //   const input = document.createElement('input');
+
+// //  }
+
+
+//   });
