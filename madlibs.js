@@ -43,8 +43,8 @@ return {word: em.substring(0, em.length - 3), pos: "adjective" }
   }
 }
 const parsedStory = array1.map(FinalOutput);
-//return parsedStory;
-console.log(parsedStory);
+return parsedStory;
+//console.log(parsedStory);
 }
 
 
