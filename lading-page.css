@@ -1,0 +1,13 @@
+body{
+    height: 100vh;
+}
+div.container {
+    /* background-image: url('/img/bg1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh; */
+
+
+    background-color: antiquewhite;
+}
