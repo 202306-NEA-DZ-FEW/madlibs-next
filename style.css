@@ -6,53 +6,68 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(240, 248, 255, 0.4), rgba(240, 248, 255, 0.4)), 
-    url('https://i.pinimg.com/736x/c8/ef/6a/c8ef6a5af327c826cf95da3586bec265.jpg');
+    background-image: linear-gradient(rgba(217, 149, 143, 0.11), rgba(242, 206, 174, 0.162)), 
+    url('./img/bg1.jpg');
     background-size: cover;
     font-family: 'Arial', sans-serif;
   }
   
   .container {
+    height: 400px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
-    background-color: rgba(224, 247, 250, 0.8);
-    border-radius: 25px;
+    background-color: rgba(224, 247, 250, 0.106);
+    backdrop-filter: blur(5px);
+    /* border-radius: 25px; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: #CCC solid 1px;
   }
   
   .text {
-    font-size: 36px;
-    font-family: 'Kurale', serif;
-    color: #6ec573;
+    font-size: 60px;
+    font-family: 'Exo', serif;
+    color: #FFF;
     margin-bottom: 20px;
   }
 
   #second {
     font-size: 48px;
-    color: #de8ab4;
+    color: #D9958F;
     font-family: 'Satisfy', cursive;
   }
   
   .btn {
+    align-self: center;
     padding: 10px 20px;
-    background-color: #8ae48d;
-    font-family: 'Kurale', serif;
+    background-color: #d9958fec;
+    font-family: 'Exo', serif;
     color: white;
-    border: none;
-    border-radius: 5px;
+    border: #97625d solid 1px;
+    /* border-radius: 5px; */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 26px;
+    
   }
 
+  .btn:hover{
+    background-color: #a25c56ec;
+    color: white;
+    border: #cabbb9ce solid 1px;
+  }
+  
   footer {
     position: fixed;
     bottom: 0;
-    background-color: rgba(240, 240, 240, 0.8);
-    border-radius: 20px;
+    background-color: rgba(217, 149, 143, 0.318);
+    border-radius: 6px;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
     font-family: 'Kurale', serif;
-    color:rgba(165, 42, 42, 0.5);
+    color:rgba(255, 255, 255, 0.921);
+    border: #ae9694b2 solid 1px;
   }
