@@ -14,7 +14,12 @@
  
   <div class="container">
     <h1 class="text">Create your <span id="second">Own</span> story!</h1>
-    <button class="btn">Let's start</button>
+    <button id="btnClick" class="btn" onclick="redirectToMain()">Let's start </button>
+    <script>
+      function redirectToMain() {
+          window.location.href = 'index.html';
+      }
+  </script>
   </div>
 
   <footer>
