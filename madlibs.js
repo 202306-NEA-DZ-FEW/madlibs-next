@@ -27,9 +27,26 @@
  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
  */
 function parseStory(rawStory) {
-  // Your code here.
-  return {}; // This line is currently wrong :)
+console.log(rawStory);
+const array1 = rawStory.replaceAll("," , " ,").replaceAll(".", " .").split(" ");
+function FinalOutput(em) {
+  if (em.endsWith("[n]")==true) {
+      return { word: em.substring(0, em.length - 3), pos: "noun" };
+  }else if  (em.endsWith("[v]")==true){
+    return { word: em.substring(0, em.length - 3), pos: "verb" };
+
+  }else if (em.endsWith("[a]")==true){
+return {word: em.substring(0, em.length - 3), pos: "adjective" }
+  }else{
+
+    return {word:em };
+  }
 }
+const parsedStory = array1.map(FinalOutput);
+//return parsedStory;
+console.log(parsedStory);
+}
+
 
 /**
  * All your other JavaScript code goes here, inside the function. Don't worry about
