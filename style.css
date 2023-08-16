@@ -1,3 +1,15 @@
 /**
  * Your CSS goes here.
  */
+
+.madLibsPreview {
+  margin-top: 10rem;
+}
+
+.spann {
+  margin-right: 10px;
+}
+
+.pos {
+  background-color: aqua;
+}

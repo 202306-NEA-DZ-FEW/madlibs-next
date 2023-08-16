@@ -43,8 +43,10 @@ function parseStory(rawStory) {
       return { word: em };
     }
   }
+
   const parsedStory = array1.map(FinalOutput);
   return parsedStory;
+  //console.log(parsedStory);
 }
 
 /**
@@ -56,5 +58,65 @@ function parseStory(rawStory) {
 getRawStory()
   .then(parseStory)
   .then((processedStory) => {
-    console.log(processedStory);
+    madLibsDom(processedStory);
   });
+
+// DOM
+
+function madLibsDom(arrayOfWords) {
+  //'editBox' and 'previewBox' are div elements where text is displayed.
+  const editBox = document.querySelectorAll(".madLibsEdit")[0];
+  const previewBox = document.querySelectorAll(".madLibsPreview")[0];
+
+  const inputHolders = [
+    "Your&nbsp;name&nbsp;[n]",
+    "Put&nbsp;a&nbsp;verb&nbsp;[v]",
+    "The&nbsp;name&nbsp;of&nbsp;theworkshop&nbsp;[n]",
+  ];
+
+  // the count is used, to generate ids for inputs and their preview
+  let count = 0;
+
+  // Adding the story to the HTML
+  for (const obj of arrayOfWords) {
+    if (!obj.pos) {
+      // creating simple words that don't have POS (not a verb, noun ,or adjective)
+      const word = document.createElement("SPAN");
+      word.classList.add("spann");
+      word.textContent = obj.word;
+      // the clone is needed to append same word into two parents otherwise it won't work
+      const word2 = word.cloneNode(true);
+      editBox.append(word);
+      previewBox.append(word2);
+    } else {
+      // if POS exists that's mean this is either a noun ,verbe , or adjevtive
+      // creating Inputs and adding eventListener at the end after appending
+      const input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("id", "inpt" + count);
+      input.setAttribute("maxlength", 20);
+      input.classList.add("class");
+      editBox.append(input);
+      input.addEventListener("keyup", () =>
+        sync(input.getAttribute("id"), input.value)
+      );
+
+      // this is the preview related to the inputs , when u change inputs in editBox the result appears here
+      const span = document.createElement("SPAN");
+      span.classList.add("spann", "pos");
+      span.setAttribute("id", "spn" + count);
+      span.textContent = obj.pos;
+
+      previewBox.append(span);
+      count++;
+    }
+  }
+}
+
+// the sync function is creating connection between inputs and preview (the previews are just HTML spans)
+const sync = (id, val) => {
+  console.log(id.replace(/\D/g, ""));
+  const count = id.replace(/\D/g, "");
+  document.getElementById("inpt" + count).innerHTML = val;
+  document.getElementById("spn" + count).textContent = val;
+};
