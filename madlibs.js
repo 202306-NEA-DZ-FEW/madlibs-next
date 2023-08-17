@@ -119,3 +119,23 @@ const sync = (id, val) => {
   document.getElementById("inpt" + count).innerHTML = val;
   document.getElementById("spn" + count).textContent = val;
 };
+
+
+// Input focus function
+document.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    const inputsF = document.querySelectorAll('.input');
+    const focusInput = document.activeElement;
+
+    if (inputsF.length > 1) {
+      e.preventDefault();
+
+      // Making array of inputs
+      const currentIndex = Array.from(inputsF).indexOf(focusInput);
+      const nextIndex = (currentIndex + 1) // % inputsF.length; => If you want to loop it ie: return to the first input.
+      
+      // Move to the next input
+      inputsF[nextIndex].focus();
+    }
+  }
+});

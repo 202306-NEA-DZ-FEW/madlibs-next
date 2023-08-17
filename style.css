@@ -135,3 +135,22 @@ color: #cc5d5d;
 input:focus {
   outline: #cc5d5d solid 1px;
   background-color: rgba(255, 255, 255, 0.3);}
+
+
+ #welcome, #end {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Kurale', serif;
+  color:#845569;
+  text-shadow: 2px 2px 4px #f0bfbb;
+  font-size: 50px;
+  font-style: italic;
+ }
+
+#end {
+  color: #cc5d5d;
+  text-shadow: 2px 2px 4px #47373e;
+  font-size: 40px;
+  margin-bottom: 4rem;
+}
+
