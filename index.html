@@ -7,6 +7,11 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <audio id="audio-player" src="sounds/116709.mp3" loop ></audio>
+    <div class="containerAudio"><input type="button"  id="pause"  class="control-button"  value="Pause">
+      <input type="button"  id="play"    value="Play"  class="control-button"></div>
+    
+
     <h1 id="welcome"> Your adventure is just starting...</h1>
     <div class="wrapper">
       
@@ -17,7 +22,27 @@
       
     </div>
     <h1 id="end"> The End.</h1>
-    
+    <script>
+      const audioPlayer = document.querySelector('#audio-player');
+      audioPlayer.play();
+     const pauseAudio= document.querySelector('#pause');
+     const playAudio= document.querySelector('#play');
+
+
+   pauseAudio.addEventListener('click', () => {
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0
+      // audioPlayer.play();
+    });
+    playAudio.addEventListener('click',()=>{
+      audioPlayer.play();
+
+
+    });
+
+
+
+    </script>
     <footer>
       <small>Brought to you by team <i>WonderTellers</i></small>
     </footer>
