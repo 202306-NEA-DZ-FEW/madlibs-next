@@ -95,7 +95,7 @@ function madLibsDom(arrayOfWords) {
       input.setAttribute("type", "text");
       input.setAttribute("id", "inpt" + count);
       input.setAttribute("maxlength", 20);
-      input.classList.add("class");
+      input.classList.add("input");
       editBox.append(input);
       input.addEventListener("keyup", () =>
         sync(input.getAttribute("id"), input.value)
@@ -105,8 +105,7 @@ function madLibsDom(arrayOfWords) {
       const span = document.createElement("SPAN");
       span.classList.add("spann", "pos");
       span.setAttribute("id", "spn" + count);
-      span.textContent = obj.pos;
-
+      span.textContent = `[${obj.pos}]`;
       previewBox.append(span);
       count++;
     }
