@@ -120,3 +120,33 @@ const sync = (id, val) => {
   document.getElementById("inpt" + count).innerHTML = val;
   document.getElementById("spn" + count).textContent = val;
 };
+ 
+
+document.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    const inputsF = document.querySelectorAll('.class');
+    const focusInput = document.activeElement;
+
+    if (inputsF.length > 1) {
+      e.preventDefault();
+
+      const currentIndex = Array.from(inputsF).indexOf(focusInput);
+      const nextIndex = (currentIndex + 1) % inputsF.length;
+
+      inputsF[nextIndex].focus();
+    }
+  }
+});
+
+
+document.addEventListener("input", function(event) {
+  if (event.target.classList.contains("textInput")) {
+      const textInput = event.target;
+      const container = textInput.closest(".madLibsEdit");
+      const output = container.querySelector(".class");
+      const originalText = output.textContent.split(":")[1].trim();
+
+      const typedText = textInput.value;
+      output.textContent = typedText.length > 0 ? `${typedText}` : `${originalText}`;
+  }
+});

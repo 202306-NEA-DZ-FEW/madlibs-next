@@ -105,8 +105,9 @@ footer {
   padding-right: 10px;
   text-align: center;
   font-family: "Kurale", serif;
-  color: rgba(255, 255, 255, 0.921);
-  border: #ae9694b2 solid 1px;
+  color: rgba(255, 255, 255, 0.6);
+  border: none;
+  width: 100%;
 }
 
 .class {
