@@ -44,6 +44,8 @@ function parseStory(rawStory) {
     }
   }
 
+  
+
   const parsedStory = array1.map(FinalOutput);
   return parsedStory;
   //console.log(parsedStory);
@@ -58,15 +60,24 @@ function parseStory(rawStory) {
 getRawStory()
   .then(parseStory)
   .then((processedStory) => {
-    madLibsDom(processedStory);
+    // const joinedProcessedStory = processedStory.map(obj => `${obj.word} [${obj.pos}]`).join(" ");
+
+    // const splitProcessedStory = splitArray(joinedProcessedStory, ".");
+    // console.log(splitProcessedStory[0])
+    // madLibsDom(splitProcessedStory[0])
+    let array =  [processedStory.slice(0,26), processedStory.slice(28,55), processedStory.slice(56,70), processedStory.slice(70,90)];
+    console.log(array);
+    
+    for (let i = 0; i < array.length; i++) {
+      madLibsDom(array[i], i);
+    }
   });
 
-// DOM
+function madLibsDom(arrayOfWords, i) {
 
-function madLibsDom(arrayOfWords) {
   //'editBox' and 'previewBox' are div elements where text is displayed.
-  const editBox = document.querySelectorAll(".madLibsEdit")[0];
-  const previewBox = document.querySelectorAll(".madLibsPreview")[0];
+  const editBox = document.querySelectorAll(".madLibsEdit")[i];
+  const previewBox = document.querySelectorAll(".madLibsPreview")[i];
 
   const inputHolders = [
     "Your&nbsp;name&nbsp;[n]",
@@ -119,7 +130,6 @@ const sync = (id, val) => {
   document.getElementById("inpt" + count).innerHTML = val;
   document.getElementById("spn" + count).textContent = val;
 };
-
 
 // Input focus function
 document.addEventListener("keypress", (e) => {

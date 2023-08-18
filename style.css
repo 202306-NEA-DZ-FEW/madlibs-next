@@ -1,15 +1,17 @@
-body {
+
+
+ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-image: linear-gradient(
+   background-image: linear-gradient(
       rgba(217, 149, 143, 0.11),
       rgba(242, 206, 174, 0.162)
     ),
     url("./img/bg1.jpg");
   background-size: cover;
   font-family: "Kurale", sans-serif;
-}
+} 
 
 
 #wrapper{
@@ -76,6 +78,7 @@ body {
 .style {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   width: 500px;
@@ -173,7 +176,48 @@ input:focus {
   cursor: pointer;
   border-radius: 8px;
   transition: background-color 0.3s;
+}
+
+.box-container1{
+
+  margin-bottom: 30px
 
 
+}
+.box-container {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+}
 
+.column-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.madLibsEdit, .madLibsPreview {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.img {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-container {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-left: 200px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
