@@ -69,9 +69,35 @@ function madLibsDom(arrayOfWords) {
   const previewBox = document.querySelectorAll(".madLibsPreview")[0];
 
   const inputHolders = [
-    "Your&nbsp;name&nbsp;[n]",
-    "Put&nbsp;a&nbsp;verb&nbsp;[v]",
-    "The&nbsp;name&nbsp;of&nbsp;theworkshop&nbsp;[n]",
+    "village name",
+    "person's name",
+    "put a verb",
+    "positive impact",
+    "intense",
+    "age adjective",
+    "what !",
+    "put a verb",
+    "put a verb",
+    "dream",
+    "give an adjective",
+    "person's name",
+    "put a noun",
+    "path",
+    "put a noun",
+    "put a verb",
+    "put a noun",
+    "put a noun",
+    "put a verb",
+    "put a noun",
+    "put a verb",
+    "put a verb",
+    "put a noun",
+    "put a noun",
+    "put a verb",
+    "give an adjective",
+    "village name",
+    "put a noun",
+    "give an adjective",
   ];
 
   // the count is used, to generate ids for inputs and their preview
@@ -97,9 +123,11 @@ function madLibsDom(arrayOfWords) {
       input.setAttribute("maxlength", 20);
       input.classList.add("input");
       editBox.append(input);
-      input.addEventListener("keyup", () =>
-        sync(input.getAttribute("id"), input.value)
-      );
+      input.placeholder = inputHolders[count]; 
+      input.addEventListener("keyup", () => {
+        console.log("Input holder:", inputHolders[count]); // Log the corresponding placeholder
+        sync(input.getAttribute("id"), input.value);
+      });
 
       // this is the preview related to the inputs , when u change inputs in editBox the result appears here
       const span = document.createElement("SPAN");
