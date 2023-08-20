@@ -7,53 +7,54 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <audio id="audio-player" src="sounds/116709.mp3" loop ></audio>
-    <div class="containerAudio"><input type="button"  id="pause"  class="control-button"  value="Pause">
-      <input type="button"  id="play"    value="Play"  class="control-button"></div>
     
-
-    <h1 id="welcome"> Your adventure is just starting...</h1>
-    <div class="box-container">
-      <div class="column-container">
-        <div class="madLibsEdit style" id="editBox1"></div>
-        <div class="madLibsPreview style" id="previewBox1"></div>
-      </div>
-      <img src="img/img1.jpg" alt="Adventure Image 1" class="image-container">
-    </div>
-
-    <div class="box-container">
-    <img src="img/img2.jpg" alt="Adventure Image 1" class="image-container img2">
-
-      <div class="column-container">
-      <div class="madLibsEdit style" id="editBox2"></div>
-      <div class="madLibsPreview style" id="previewBox2"></div>
-      </div>
-
-    </div>
-
-    <div class="box-container">
-      <div class="column-container">
-
-      <div class="madLibsEdit style" id="editBox3"></div>
-      <div class="madLibsPreview style" id="previewBox3"></div>
-      </div>
-      <img src="img/img4.jpg" alt="Adventure Image 1" class="image-container">
-
-    </div>
-    <div class="box-container">
-      <img src="img/img3.jpg" alt="Adventure Image 1" class="image-container">
-
-      <div class="column-container">
-
-      <div class="madLibsEdit style" id="editBox3"></div>
-      <div class="madLibsPreview style" id="previewBox3"></div>
-      </div>
-
+    <div class="containerAudio">
+      <audio id="audio-player" src="sounds/116709.mp3" loop ></audio>
+      <input type="range"  min="0" max="100" value="10" id="volume" class="control-button">
+      <input type="button"  id="pause"  class="control-button" value="Pause">
+      <input type="button"  id="play"   class="control-button" value="Play">
+      
     </div>
     
+    
+    <div id= "wrapper" class="wreapper">
+      <h1 id="welcome"> Your adventure is just starting...</h1>
+      <div class="box-container">
+        <div class="column-container">
+          <div class="madLibsEdit style" id="editBox1"></div>
+          <div class="madLibsPreview style" id="previewBox1"></div>
+        </div>
+        <img src="img/img1.jpg" alt="Adventure Image 1" class="image-container">
+      </div>
 
+      <div class="box-container">
+        <img src="img/img2.jpg" alt="Adventure Image 1" class="image-container img2">
+        <div class="column-container">
+          <div class="madLibsEdit style" id="editBox2"></div>
+          <div class="madLibsPreview style" id="previewBox2"></div>
+        </div>
 
+      </div>
 
+      <div class="box-container">
+        <div class="column-container">
+          <div class="madLibsEdit style" id="editBox3"></div>
+          <div class="madLibsPreview style" id="previewBox3"></div>
+        </div>
+        <img src="img/img4.jpg" alt="Adventure Image 1" class="image-container">
+
+      </div>
+      <div class="box-container">
+        <img src="img/img3.jpg" alt="Adventure Image 1" class="image-container">
+
+        <div class="column-container">
+
+        <div class="madLibsEdit style" id="editBox3"></div>
+        <div class="madLibsPreview style" id="previewBox3"></div>
+        </div>
+
+      </div>
+    </div>
 
       <!-- <div class='madLibsEdit style'>
       </div>
@@ -65,20 +66,25 @@
     <script>
       const audioPlayer = document.querySelector('#audio-player');
       audioPlayer.play();
-     const pauseAudio= document.querySelector('#pause');
-     const playAudio= document.querySelector('#play');
+      const pauseAudio= document.querySelector('#pause');
+      const playAudio= document.querySelector('#play');
+      const volume = document.querySelector('#volume');
 
-
-   pauseAudio.addEventListener('click', () => {
+        
+    pauseAudio.addEventListener('click', () => {
       audioPlayer.pause();
-      audioPlayer.currentTime = 0
-      // audioPlayer.play();
+      audioPlayer.currentTime = 0;     
     });
+
     playAudio.addEventListener('click',()=>{
       audioPlayer.play();
-
-
     });
+
+    // Set the volume slider
+    volume.addEventListener('change', (e) =>{
+      audioPlayer.volume = e.currentTarget.value / 100; 
+    })
+
 
 
 
