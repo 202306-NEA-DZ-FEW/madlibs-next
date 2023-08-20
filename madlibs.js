@@ -65,13 +65,14 @@ getRawStory()
     // const splitProcessedStory = splitArray(joinedProcessedStory, ".");
     // console.log(splitProcessedStory[0])
     // madLibsDom(splitProcessedStory[0])
-    let array =  [processedStory.slice(0,26), processedStory.slice(28,55), processedStory.slice(56,70), processedStory.slice(70,90)];
-    console.log(array);
-    
+    let array =  [processedStory.slice(0,28), processedStory.slice(28,53), processedStory.slice(53,111),processedStory.slice(111,205)];
+    //console.log(array);
     for (let i = 0; i < array.length; i++) {
-      madLibsDom(array[i], i);
+      madLibsDom(array[i], i );
     }
+    
   });
+  let count=0;
 
 function madLibsDom(arrayOfWords, i) {
 
@@ -86,7 +87,7 @@ function madLibsDom(arrayOfWords, i) {
   ];
 
   // the count is used, to generate ids for inputs and their preview
-  let count = 0;
+  
 
   // Adding the story to the HTML
   for (const obj of arrayOfWords) {
