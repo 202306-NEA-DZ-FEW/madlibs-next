@@ -213,7 +213,7 @@ input:focus {
   margin-bottom: 30px;
   align-items: center;
   margin-right: 20px;
-  padding-left: 100px;
+  padding-left: 10px;
   gap: 25px;
 }
 
@@ -256,4 +256,14 @@ input:focus {
 }
 .img2{
 margin-right: 30px;
+}
+
+@media screen and (max-width:1100px) { .box-container img {width:50%;}
+.box-container img {height: 75%;}
+.box-container div {width:90%;}
+ }
+
+@media screen and (max-width:900px) { #welcome {width:50%;}
+#welcome {font-size : 30px ;}
+#end {font-size : 30px; }
 }
