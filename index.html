@@ -11,20 +11,26 @@
     <div class="containerAudio">
       <audio id="audio-player" src="sounds/116709.mp3" loop ></audio>
       <input type="range"  min="0" max="100" value="10" id="volume" class="control-button">
-      <input type="button"  id="pause"  class="control-button" value="Pause">
-      <input type="button"  id="play"   class="control-button" value="Play">
+      <div class="btn-audio">
+        <input type="button"  id="pause"  class="control-button" value="Pause">
+        <input type="button"  id="play"   class="control-button" value="Play">
+      </div>
       
     </div>
     
-    
+     <h1 id="welcome"> Your adventure is just starting...</h1>
     <div id= "wrapper" class="wreapper">
-      <h1 id="welcome"> Your adventure is just starting...</h1>
+     
       <div class="box-container">
+        <div class="image-wrapper">
+          <img src="img/img1.jpg" alt="Adventure Image 1" class="image-container">
+        </div>
+        
         <div class="column-container">
           <div class="madLibsEdit style" id="editBox1"></div>
           <div class="madLibsPreview style" id="previewBox1"></div>
         </div>
-        <img src="img/img1.jpg" alt="Adventure Image 1" class="image-container">
+     
       </div>
 
       <div class="box-container">
@@ -37,11 +43,12 @@
       </div>
 
       <div class="box-container">
+        <img src="img/img4.jpg" alt="Adventure Image 1" class="image-container">
         <div class="column-container">
           <div class="madLibsEdit style" id="editBox3"></div>
           <div class="madLibsPreview style" id="previewBox3"></div>
         </div>
-        <img src="img/img4.jpg" alt="Adventure Image 1" class="image-container">
+     
 
       </div>
       <div class="box-container">
@@ -56,10 +63,7 @@
       </div>
     </div>
 
-      <!-- <div class='madLibsEdit style'>
-      </div>
-      <div class='madLibsPreview style'>
-      </div> -->
+     
       
     </div>
     <h1 id="end"> The End.</h1>
