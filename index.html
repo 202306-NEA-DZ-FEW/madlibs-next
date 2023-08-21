@@ -12,8 +12,10 @@
       <audio id="audio-player" src="sounds/116709.mp3" loop ></audio>
       <input type="range"  min="0" max="100" value="10" id="volume" class="control-button">
       <div class="btn-audio">
+      
         <input type="button"  id="pause"  class="control-button" value="Pause">
         <input type="button"  id="play"   class="control-button" value="Play">
+        <input type="button"  id="reset"  class="control-button reset" value="Reset">
       </div>
       
     </div>
@@ -34,7 +36,10 @@
       </div>
 
       <div class="box-container">
-        <img src="img/img2.jpg" alt="Adventure Image 1" class="image-container img2">
+        <div class="image-wrapper">
+            <img src="img/img2.jpg" alt="Adventure Image 1" class="image-container img2">
+        </div>
+      
         <div class="column-container">
           <div class="madLibsEdit style" id="editBox2"></div>
           <div class="madLibsPreview style" id="previewBox2"></div>

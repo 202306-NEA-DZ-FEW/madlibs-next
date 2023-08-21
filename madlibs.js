@@ -44,8 +44,6 @@ function parseStory(rawStory) {
     }
   }
 
-  
-
   const parsedStory = array1.map(FinalOutput);
   return parsedStory;
   //console.log(parsedStory);
@@ -65,22 +63,24 @@ getRawStory()
     // const splitProcessedStory = splitArray(joinedProcessedStory, ".");
     // console.log(splitProcessedStory[0])
     // madLibsDom(splitProcessedStory[0])
-    let array =  [processedStory.slice(0,28), processedStory.slice(28,53), processedStory.slice(53,111),processedStory.slice(111,205)];
+    let array = [
+      processedStory.slice(0, 28),
+      processedStory.slice(28, 53),
+      processedStory.slice(53, 111),
+      processedStory.slice(111, 205),
+    ];
     //console.log(array);
     for (let i = 0; i < array.length; i++) {
-      madLibsDom(array[i], i );
+      madLibsDom(array[i], i);
     }
-    
   });
-  let count=0;
+let count = 0;
 
 function madLibsDom(arrayOfWords, i) {
-
   //'editBox' and 'previewBox' are div elements where text is displayed.
   const editBox = document.querySelectorAll(".madLibsEdit")[i];
   const previewBox = document.querySelectorAll(".madLibsPreview")[i];
 
-  
   const inputHolders = [
     "village name",
     "person's name",
@@ -114,7 +114,6 @@ function madLibsDom(arrayOfWords, i) {
   ];
 
   // the count is used, to generate ids for inputs and their preview
-  
 
   // Adding the story to the HTML
   for (const obj of arrayOfWords) {
@@ -136,7 +135,7 @@ function madLibsDom(arrayOfWords, i) {
       input.setAttribute("maxlength", 20);
       input.classList.add("input");
       editBox.append(input);
-      input.placeholder = inputHolders[count]; 
+      input.placeholder = inputHolders[count];
       input.addEventListener("keyup", () => {
         console.log("Input holder:", inputHolders[count]); // Log the corresponding placeholder
         sync(input.getAttribute("id"), input.value);
@@ -146,6 +145,7 @@ function madLibsDom(arrayOfWords, i) {
       const span = document.createElement("SPAN");
       span.classList.add("spann", "pos");
       span.setAttribute("id", "spn" + count);
+      span.setAttribute("value", `[${obj.pos}]`);
       span.textContent = `[${obj.pos}]`;
       previewBox.append(span);
       count++;
@@ -164,7 +164,7 @@ const sync = (id, val) => {
 // Input focus function
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    const inputsF = document.querySelectorAll('.input');
+    const inputsF = document.querySelectorAll(".input");
     const focusInput = document.activeElement;
 
     if (inputsF.length > 1) {
@@ -172,10 +172,26 @@ document.addEventListener("keypress", (e) => {
 
       // Making array of inputs
       const currentIndex = Array.from(inputsF).indexOf(focusInput);
-      const nextIndex = (currentIndex + 1) // % inputsF.length; => If you want to loop it ie: return to the first input.
-      
+      const nextIndex = currentIndex + 1; // % inputsF.length; => If you want to loop it ie: return to the first input.
+
       // Move to the next input
       inputsF[nextIndex].focus();
     }
   }
 });
+
+// Reset function
+
+const reset = () => {
+  const inputs = document.querySelectorAll(".input");
+  const previews = document.querySelectorAll(".pos");
+
+  inputs.forEach((input, index) => {
+    const prev = previews[index];
+    console.log("inputtttt", input);
+    input.value = "";
+    prev.textContent = prev.getAttribute("value");
+  });
+};
+
+document.getElementById("reset").addEventListener("click", reset);
